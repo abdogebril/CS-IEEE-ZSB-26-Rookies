@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+
+    for (int k = 0; k < t; k++) {
+        int n;
+        cin >> n;
+        string s;
+        cin >> s;
+
+        int balloons = 0;
+
+        for (int i = 0; i < n; i++) {
+            bool first_time = true;
+
+
+            for (int j = 0; j < i; j++) {
+                if (s[j] == s[i]) {
+                    first_time = false;
+                }
+            }
+
+            if (first_time) {
+                balloons += 2;
+            } else {
+                balloons += 1;
+            }
+        }
+
+        cout << balloons << endl;
+    }
+
+    return 0;
+}
